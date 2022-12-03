@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'org.aoc'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.google.flogger/flogger
+    implementation 'com.google.flogger:flogger:0.7.4'
+    // https://mvnrepository.com/artifact/com.google.flogger/flogger-system-backend
+    implementation 'com.google.flogger:flogger-system-backend:0.7.4'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
