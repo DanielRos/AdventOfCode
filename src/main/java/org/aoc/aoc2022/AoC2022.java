@@ -1,6 +1,7 @@
 package org.aoc.aoc2022;
 
 import static org.aoc.common.util.Util.getNumbersBetween;
+import static org.aoc.common.util.Util.rangeToList;
 
 import com.google.common.flogger.FluentLogger;
 import java.util.List;
@@ -8,12 +9,13 @@ import java.util.concurrent.Callable;
 import org.aoc.aoc2022.days.Day1;
 import org.aoc.aoc2022.days.Day2;
 import org.aoc.aoc2022.days.Day3;
+import org.aoc.aoc2022.days.Day4;
 import org.aoc.common.AoCDay;
 
 public class AoC2022 {
   private AoC2022() {}
 
-  static List<AoCDay> allDays = List.of(new Day1(), new Day2(), new Day3());
+  static List<AoCDay> allDays = List.of(new Day1(), new Day2(), new Day3(), new Day4());
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
@@ -22,12 +24,14 @@ public class AoC2022 {
     //executeDay(1);
     //warmUp(2, 2);
     //executeDay(2);
-    warmUp(3, 2);
-    executeDay(3);
+    //warmUp(3, 2);
+    //executeDay(3);
+    warmUp(4, 2);
+    executeDay(4);
   }
 
   public static void run() {
-    for (Integer integer : getNumbersBetween(1, allDays.size())) {
+    for (Integer integer : rangeToList(1, allDays.size())) {
     try {
         executeDay(integer);
     } catch (Exception e) {

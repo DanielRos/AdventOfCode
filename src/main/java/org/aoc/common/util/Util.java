@@ -68,6 +68,11 @@ public class Util {
     return intersection;
   }
 
+  public static List<Integer> rangeToList(int num1, int num2) {
+    return IntStream.rangeClosed(num1, num2)
+        .boxed()
+        .toList();
+  }
   public static List<Integer> getNumbersBetween(int num1, int num2) {
     if(num1 > num2) {
       return IntStream.rangeClosed(num2, num1)
@@ -110,5 +115,12 @@ public class Util {
 
     Arrays.sort(chars);
     return new String(chars);
+  }
+
+  public static boolean isWithinRange(int n, int start, int end) {
+    if(n >= start && n <= end) {
+      return true;
+    }
+    return false;
   }
 }
