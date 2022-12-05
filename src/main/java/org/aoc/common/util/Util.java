@@ -101,8 +101,7 @@ public class Util {
   }
 
   public static String keyOfVal(Map<String, Integer> map, Integer value) {
-    return map
-            .entrySet()
+    return map.entrySet()
             .stream()
             .filter(entry -> value.equals(entry.getValue()))
             .map(Map.Entry::getKey)

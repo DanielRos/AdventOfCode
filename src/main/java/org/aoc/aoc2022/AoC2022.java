@@ -1,6 +1,5 @@
 package org.aoc.aoc2022;
 
-import static org.aoc.common.util.Util.getNumbersBetween;
 import static org.aoc.common.util.Util.rangeToList;
 
 import com.google.common.flogger.FluentLogger;
@@ -10,24 +9,27 @@ import org.aoc.aoc2022.days.Day1;
 import org.aoc.aoc2022.days.Day2;
 import org.aoc.aoc2022.days.Day3;
 import org.aoc.aoc2022.days.Day4;
+import org.aoc.aoc2022.days.Day5;
 import org.aoc.common.AoCDay;
 
 public class AoC2022 {
   private AoC2022() {}
 
-  static List<AoCDay> allDays = List.of(new Day1(), new Day2(), new Day3(), new Day4());
+  static List<AoCDay> allDays = List.of(new Day1(), new Day2(), new Day3(), new Day4(), new Day5());
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
   public static void runSpecific() throws Exception {
-    //warmUp(1, 2);
-    //executeDay(1);
+    //warmUp(1, 10);
+    //executeDay(1);  // 160k ns + 380k ns
     //warmUp(2, 2);
-    //executeDay(2);
+    //executeDay(2); // 300k ns + 400k ns
     //warmUp(3, 2);
-    //executeDay(3);
-    warmUp(4, 2);
-    executeDay(4);
+    //executeDay(3); // 336k ns + 766k ns
+    //warmUp(4, 2);
+    //executeDay(4); // 575k ns + 14261k ns
+    warmUp(5, 2);
+    executeDay(5); // 332k ns + 1236k ns
   }
 
   public static void run() {
