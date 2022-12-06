@@ -32,7 +32,7 @@ public class AoC2022 {
     //warmUp(5, 2);
     //executeDay(5); // 332k ns + 1236k ns
     warmUp(6, 2);
-    executeDay(6); // 63k ns + 177k ns
+    executeDay(6); // 58k ns + 165k ns
   }
 
   public static void run() {
