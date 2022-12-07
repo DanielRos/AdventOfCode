@@ -11,12 +11,13 @@ import org.aoc.aoc2022.days.Day3;
 import org.aoc.aoc2022.days.Day4;
 import org.aoc.aoc2022.days.Day5;
 import org.aoc.aoc2022.days.Day6;
+import org.aoc.aoc2022.days.Day7;
 import org.aoc.common.AoCDay;
 
 public class AoC2022 {
   private AoC2022() {}
 
-  static List<AoCDay> allDays = List.of(new Day1(), new Day2(), new Day3(), new Day4(), new Day5(), new Day6());
+  static List<AoCDay> allDays = List.of(new Day1(), new Day2(), new Day3(), new Day4(), new Day5(), new Day6(), new Day7());
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
@@ -31,8 +32,10 @@ public class AoC2022 {
     //executeDay(4); // 575k ns + 14261k ns
     //warmUp(5, 2);
     //executeDay(5); // 332k ns + 1236k ns
-    warmUp(6, 2);
-    executeDay(6); // 58k ns + 165k ns
+    //warmUp(6, 2);
+    //executeDay(6); // 58k ns + 165k ns
+    warmUp(7, 2);
+    executeDay(7); // 400k ns + 1500k ns
   }
 
   public static void run() {
