@@ -28,9 +28,8 @@ public class Day8 implements AoCDay {
     int visibleTrees = 0;
 
     for (int row = 0; row < input.length; row++) {
-      final int[] columns = input[row];
-      for (int col = 0; col < columns.length; col++) {
-        if(isOnTheEdge(row, col, columns.length-1,input.length-1)
+      for (int col = 0; col < input[row].length; col++) {
+        if(isOnTheEdge(row, col, input[row].length-1,input.length-1)
             || isVisible(row, col, input)) {
           visibleTrees++;
         }
@@ -45,13 +44,9 @@ public class Day8 implements AoCDay {
     int maxScenicScore = 0;
 
     for (int row = 0; row < input.length; row++) {
-      final int[] columns = input[row];
-      for (int col = 0; col < columns.length; col++) {
-        if(!isOnTheEdge(row, col, columns.length-1,input.length-1)) {
-          final int scenicScore = calculateScenicScore(row, col, input);
-          if(scenicScore > maxScenicScore) {
-            maxScenicScore = scenicScore;
-          }
+      for (int col = 0; col < input[row].length; col++) {
+        if(!isOnTheEdge(row, col, input[row].length-1,input.length-1)) {
+          maxScenicScore = Math.max(calculateScenicScore(row, col, input), maxScenicScore);
         }
       }
     }
@@ -59,8 +54,8 @@ public class Day8 implements AoCDay {
   }
 
   private int calculateScenicScore(int row, int col, int[][] input) {
-    //check above
     final int value = input[row][col];
+    //check above
     final int northView = verticalViewingDistance(moreThanOrEqualTo, 0, input, minusOne, col, row, value,0);
     //check below
     final int southView = verticalViewingDistance(lessThan, input.length, input, plusOne, col, row, value, 0);
@@ -108,8 +103,8 @@ public class Day8 implements AoCDay {
   }
 
   private boolean isVisible(int row, int col, int[][] input) {
-    //check above
     final int value = input[row][col];
+    //check above
     if(visibleFromVerticalAngle(moreThanOrEqualTo, 0, input,  minusOne, col, row, value)) return true;
     //check below
     if(visibleFromVerticalAngle(lessThan, input.length, input, plusOne, col, row, value)) return true;
