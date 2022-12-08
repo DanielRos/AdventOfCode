@@ -3,6 +3,7 @@ package org.aoc.aoc2022;
 import static org.aoc.common.util.Util.rangeToList;
 
 import com.google.common.flogger.FluentLogger;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import org.aoc.aoc2022.days.Day1;
@@ -12,12 +13,25 @@ import org.aoc.aoc2022.days.Day4;
 import org.aoc.aoc2022.days.Day5;
 import org.aoc.aoc2022.days.Day6;
 import org.aoc.aoc2022.days.Day7;
+import org.aoc.aoc2022.days.Day8;
 import org.aoc.common.AoCDay;
 
 public class AoC2022 {
   private AoC2022() {}
 
-  static List<AoCDay> allDays = List.of(new Day1(), new Day2(), new Day3(), new Day4(), new Day5(), new Day6(), new Day7());
+  static List<AoCDay> allDays;
+
+  static {
+    allDays = new ArrayList<>();
+    allDays.add(new Day1());
+    allDays.add(new Day2());
+    allDays.add(new Day3());
+    allDays.add(new Day4());
+    allDays.add(new Day5());
+    allDays.add(new Day6());
+    allDays.add(new Day7());
+    allDays.add(new Day8());
+  }
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
@@ -34,8 +48,11 @@ public class AoC2022 {
     //executeDay(5); // 332k ns + 1236k ns
     //warmUp(6, 2);
     //executeDay(6); // 58k ns + 165k ns
-    warmUp(7, 2);
-    executeDay(7); // 400k ns + 1500k ns
+    //warmUp(7, 2);
+    //executeDay(7); // 400k ns + 1500k ns
+    //warmUp(7, 2);
+    warmUp(8, 2);
+    executeDay(8); // 491k ns + 958k ns
   }
 
   public static void run() {
