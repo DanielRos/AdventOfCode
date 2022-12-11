@@ -14,6 +14,7 @@ import org.aoc.aoc2022.days.Day5;
 import org.aoc.aoc2022.days.Day6;
 import org.aoc.aoc2022.days.Day7;
 import org.aoc.aoc2022.days.Day8;
+import org.aoc.aoc2022.days.Day9;
 import org.aoc.common.AoCDay;
 
 public class AoC2022 {
@@ -31,6 +32,7 @@ public class AoC2022 {
     allDays.add(new Day6());
     allDays.add(new Day7());
     allDays.add(new Day8());
+    allDays.add(new Day9());
   }
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
@@ -50,9 +52,10 @@ public class AoC2022 {
     //executeDay(6); // 58k ns + 165k ns
     //warmUp(7, 2);
     //executeDay(7); // 400k ns + 1500k ns
-    //warmUp(7, 2);
-    warmUp(8, 2);
-    executeDay(8); // 328k ns + 455k ns
+    //warmUp(8, 2);
+    //executeDay(8); // 328k ns + 455k ns
+    warmUp(9,2);
+    executeDay(9); // 619k ns + 1140k ns
   }
 
   public static void run() {
@@ -83,18 +86,18 @@ public class AoC2022 {
   }
 
   private static void executePart1(int day) throws Exception {
-    measurePerformance(() -> allDays.get(day-1).part1(), day);
+    measurePerformance(() -> allDays.get(day-1).part1(), day, 1);
   }
 
   private static void executePart2(int day) throws Exception {
-    measurePerformance(() -> allDays.get(day-1).part2(), day);
+    measurePerformance(() -> allDays.get(day-1).part2(), day, 2);
   }
 
-  private static void measurePerformance(Callable<Number> c, int day) throws Exception {
+  private static void measurePerformance(Callable<Number> c, int day, int part) throws Exception {
     long start = System.nanoTime();
     final Number result = c.call();
     long end = System.nanoTime();
-    logger.atInfo().log("Day %d part %d: %d (Duration: %d ns) %n", day, 1, result, end-start);
+    logger.atInfo().log("Day %d part %d: %d (Duration: %d ns) %n", day, part, result, end-start);
   }
 
   private static void executeDay(int day) throws Exception {
